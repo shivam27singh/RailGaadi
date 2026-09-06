@@ -1,0 +1,34 @@
+{
+  "name": "railgaddi-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RailGaddi — Premium Live Train Journey Platform",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"API,WEB\" -c \"cyan.bold,magenta.bold\" --kill-others-on-fail \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm run dev -w apps/web",
+    "dev:api": "npm run dev -w apps/api",
+    "build:packages": "npm run build -w packages/types && npm run build -w packages/utils",
+    "build": "npm run build:packages && npm run build -w apps/api && npm run build -w apps/web",
+    "build:web": "npm run build -w apps/web",
+    "build:api": "npm run build:packages && npm run build -w apps/api",
+    "start:api": "npm run start -w apps/api",
+    "start": "concurrently -n \"API,WEB\" -c \"cyan.bold,magenta.bold\" \"npm run start:api\" \"npm run preview -w apps/web\""
+  },
+  "keywords": [
+    "railway",
+    "train-tracking",
+    "india-railways",
+    "maptiler",
+    "maplibre",
+    "journey-map"
+  ],
+  "author": "RailGaddi Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

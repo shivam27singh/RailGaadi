@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(9, 10, 15, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(17, 19, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-subtle {
+  background: rgba(21, 23, 32, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-dropdown {
+  background: rgba(14, 16, 22, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* MapLibre custom styles */
+.maplibregl-popup-content {
+  background: rgba(14, 16, 22, 0.95) !important;
+  color: #f1f5f9 !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.8) !important;
+  padding: 12px 16px !important;
+  font-family: inherit !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgba(14, 16, 22, 0.95) !important;
+  border-bottom-color: rgba(14, 16, 22, 0.95) !important;
+}
+
+.maplibregl-ctrl-group {
+  background: rgba(17, 19, 26, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.maplibregl-ctrl-group button {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
